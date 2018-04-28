@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Parent View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ParentViewController" customModule="ContainerViewLifeCycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Q7-Gg-fCg">
+                                <rect key="frame" x="0.0" y="87" width="375" height="580"/>
+                                <connections>
+                                    <segue destination="4Ir-Gl-bGG" kind="embed" id="qfi-7q-niR"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iyw-7o-5m8">
+                                <rect key="frame" x="0.0" y="87" width="375" height="580"/>
+                                <connections>
+                                    <segue destination="Don-8j-7dL" kind="embed" id="0qr-R0-KJ4"/>
+                                </connections>
+                            </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4hQ-Ee-caN">
+                                <rect key="frame" x="127" y="40" width="121" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="ogp-6y-zR8"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iyw-7o-5m8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0nC-u0-bwn"/>
+                            <constraint firstItem="0Q7-Gg-fCg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="2uo-kd-ddJ"/>
+                            <constraint firstItem="iyw-7o-5m8" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Fij-9d-Smm"/>
+                            <constraint firstItem="iyw-7o-5m8" firstAttribute="top" secondItem="4hQ-Ee-caN" secondAttribute="bottom" constant="19" id="LK0-Bo-ZbP"/>
+                            <constraint firstItem="iyw-7o-5m8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="LW7-lj-R7t"/>
+                            <constraint firstItem="4hQ-Ee-caN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pm9-D0-N0F"/>
+                            <constraint firstItem="iyw-7o-5m8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Y0y-I7-cHB"/>
+                            <constraint firstItem="iyw-7o-5m8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aIP-XS-6KR"/>
+                            <constraint firstItem="0Q7-Gg-fCg" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="aJO-Ec-B3V"/>
+                            <constraint firstItem="4hQ-Ee-caN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="c9F-mZ-zWe"/>
+                            <constraint firstItem="iyw-7o-5m8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="csr-Pr-2og"/>
+                            <constraint firstItem="0Q7-Gg-fCg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hDE-mJ-1Ri"/>
+                            <constraint firstItem="0Q7-Gg-fCg" firstAttribute="top" secondItem="4hQ-Ee-caN" secondAttribute="bottom" constant="19" id="rvW-Bx-joA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="firstView" destination="iyw-7o-5m8" id="bOX-Pl-kwe"/>
+                        <outlet property="secondView" destination="0Q7-Gg-fCg" id="DGl-qj-RBG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="cXg-wK-lai">
+            <objects>
+                <viewController id="4Ir-Gl-bGG" customClass="SecondViewController" customModule="ContainerViewLifeCycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fNY-sx-qvv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="second" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHU-8S-9EF">
+                                <rect key="frame" x="159" y="279.5" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lHU-8S-9EF" firstAttribute="centerY" secondItem="fNY-sx-qvv" secondAttribute="centerY" id="LdJ-xI-Nmc"/>
+                            <constraint firstItem="lHU-8S-9EF" firstAttribute="centerX" secondItem="fNY-sx-qvv" secondAttribute="centerX" id="dLo-hN-izA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afH-hH-59S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="566" y="851"/>
+        </scene>
+        <!--First View Controller-->
+        <scene sceneID="Bfs-zH-vmh">
+            <objects>
+                <viewController id="Don-8j-7dL" customClass="FirstViewController" customModule="ContainerViewLifeCycle" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vki-tP-nxi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="580"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="first" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAi-9o-8dE">
+                                <rect key="frame" x="172" y="279.5" width="30" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="YAi-9o-8dE" firstAttribute="centerY" secondItem="vki-tP-nxi" secondAttribute="centerY" id="R5W-UP-nxr"/>
+                            <constraint firstItem="YAi-9o-8dE" firstAttribute="centerX" secondItem="vki-tP-nxi" secondAttribute="centerX" id="f2X-am-zX6"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZs-vv-mhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-262" y="851"/>
+        </scene>
+    </scenes>
+</document>
